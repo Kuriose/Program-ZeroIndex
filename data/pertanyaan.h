@@ -13,6 +13,7 @@ vector<Pertanyaan> getPertanyaanArray();
 vector<Pertanyaan> getPertanyaanPointer();
 
 // MODUL STRUCT
+vector<Pertanyaan> getPertanyaanStruct();
 
 // MODUL SORTING
 vector<Pertanyaan> getPertanyaanBubbleSort();
@@ -29,5 +30,8 @@ vector<Pertanyaan> getPertanyaanShellSort();
 
 // MODUL SEARCHING
 vector<Pertanyaan> getPertanyaanLinearSearch();
+vector<Pertanyaan> getPertanyaanBinarySearch();
+vector<Pertanyaan> getPertanyaanInterpolationSearch();
+vector<Pertanyaan> getPertanyaanFibonacciSearch();
 
 #endif

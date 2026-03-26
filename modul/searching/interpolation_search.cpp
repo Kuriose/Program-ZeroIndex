@@ -1,27 +1,28 @@
 #include <iostream>
-#include "selection_sort.h"
+#include "interpolation_search.h"
 #include "../../fitur/quiz/quiz.h"
 #include "../../fitur/visualisasi/visualisasi.h"
 #include "../../data/pertanyaan.h"
 
 using namespace std; 
 
-void teoriSelectionSort() {
+void teoriInterpolationSearch() {
     cout << "\n[Teori]" << endl; 
-    cout << "Selection Sort merupakan algoritma pengurutan sederhana yang bekerja dengan cara memilih elemen terkecil/terbesar dari bagian array yang belum terurut, lalu menukarnya ke posisi yang benar di awal." << endl;
+    cout << 
+    "Interpolation Search merupakan variasi dari Binary Search yang bekerja lebih baik pada data yang terurut dan terdistribusi secara uniform (merata)." << endl;
 }
 
-void contohSelectionSort() {
+void contohInterpolationSearch() {
     cout << "\n[Contoh]" << endl; 
     cout << "[5, 3, 2]" << endl; 
-    cout << "-> [2, 3, 5]" << endl; 
+    cout << "-> Interpolation Search" << endl; 
 }
 
-void runSelectionSort() {
+void runInterpolationSearch() {
     int pilihan; 
 
     do {
-        cout << "\n=== SELECTION SORT ===" << endl; 
+        cout << "\n=== INTERPOLATION SEARCH ===" << endl; 
         cout << "[1] Teori" << endl; 
         cout << "[2] Contoh" << endl; 
         cout << "[3] Quiz" << endl; 
@@ -31,15 +32,15 @@ void runSelectionSort() {
         cout << "> "; cin >> pilihan; 
 
         switch (pilihan) {
-            case 1: teoriSelectionSort(); break; 
-            case 2: contohSelectionSort(); break; 
+            case 1: teoriInterpolationSearch(); break; 
+            case 2: contohInterpolationSearch(); break; 
             case 3: {
-                vector<Pertanyaan> daftarPertanyaan = getPertanyaanSelectionSort(); 
+                vector<Pertanyaan> daftarPertanyaan = getPertanyaanLinearSearch(); 
                 
                 jalankanQuiz(daftarPertanyaan); 
                 break;
             }
-            case 4: visualisasiSelection(); break;
+            case 4: visualisasiInterpolation(); break;
         }
     
     } while (pilihan != 0);

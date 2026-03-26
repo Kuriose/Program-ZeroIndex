@@ -1,6 +1,7 @@
 #include <iostream>
 #include "tree_sort.h"
 #include "../../fitur/quiz/quiz.h"
+#include "../../fitur/visualisasi/visualisasi.h"
 #include "../../data/pertanyaan.h"
 
 using namespace std; 
@@ -26,7 +27,8 @@ void runTreeSort() {
         cout << "\n=== TREE SORT ===" << endl; 
         cout << "[1] Teori" << endl; 
         cout << "[2] Contoh" << endl; 
-        cout << "[3] Quiz" << endl; 
+        cout << "[3] Quiz" << endl;
+        cout << "[4] Visualisasi" << endl; 
         cout << "[0] Kembali" << endl;
         cout << "Masukkan Pilihan Anda" << endl; 
         cout << "> "; cin >> pilihan; 
@@ -40,6 +42,7 @@ void runTreeSort() {
                 jalankanQuiz(daftarPertanyaan); 
                 break;
             }
+            case 4: visualisasiTree(); break;
         }
     
     } while (pilihan != 0);

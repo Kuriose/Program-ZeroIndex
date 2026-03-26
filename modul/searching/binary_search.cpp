@@ -1,27 +1,28 @@
 #include <iostream>
-#include "selection_sort.h"
+#include "binary_search.h"
 #include "../../fitur/quiz/quiz.h"
 #include "../../fitur/visualisasi/visualisasi.h"
 #include "../../data/pertanyaan.h"
 
 using namespace std; 
 
-void teoriSelectionSort() {
+void teoriBinarySearch() {
     cout << "\n[Teori]" << endl; 
-    cout << "Selection Sort merupakan algoritma pengurutan sederhana yang bekerja dengan cara memilih elemen terkecil/terbesar dari bagian array yang belum terurut, lalu menukarnya ke posisi yang benar di awal." << endl;
+    cout << 
+    "Binary Search merupakan algoritma pencarian efisien yang menggunakan paradigma Divide and Conquer." << endl;
 }
 
-void contohSelectionSort() {
+void contohBinarySearch() {
     cout << "\n[Contoh]" << endl; 
     cout << "[5, 3, 2]" << endl; 
-    cout << "-> [2, 3, 5]" << endl; 
+    cout << "-> Binary Search" << endl; 
 }
 
-void runSelectionSort() {
+void runBinarySearch() {
     int pilihan; 
 
     do {
-        cout << "\n=== SELECTION SORT ===" << endl; 
+        cout << "\n=== BINARY SEARCH ===" << endl; 
         cout << "[1] Teori" << endl; 
         cout << "[2] Contoh" << endl; 
         cout << "[3] Quiz" << endl; 
@@ -31,15 +32,15 @@ void runSelectionSort() {
         cout << "> "; cin >> pilihan; 
 
         switch (pilihan) {
-            case 1: teoriSelectionSort(); break; 
-            case 2: contohSelectionSort(); break; 
+            case 1: teoriBinarySearch(); break; 
+            case 2: contohBinarySearch(); break; 
             case 3: {
-                vector<Pertanyaan> daftarPertanyaan = getPertanyaanSelectionSort(); 
+                vector<Pertanyaan> daftarPertanyaan = getPertanyaanLinearSearch(); 
                 
                 jalankanQuiz(daftarPertanyaan); 
                 break;
             }
-            case 4: visualisasiSelection(); break;
+            case 4: visualisasiBinary(); break;
         }
     
     } while (pilihan != 0);

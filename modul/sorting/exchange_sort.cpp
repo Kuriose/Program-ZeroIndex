@@ -1,6 +1,7 @@
 #include <iostream>
 #include "exchange_sort.h"
 #include "../../fitur/quiz/quiz.h"
+#include "../../fitur/visualisasi/visualisasi.h"
 #include "../../data/pertanyaan.h"
 
 using namespace std; 
@@ -25,6 +26,7 @@ void runExchangeSort() {
         cout << "[1] Teori" << endl; 
         cout << "[2] Contoh" << endl; 
         cout << "[3] Quiz" << endl; 
+        cout << "[4] Visualisasi" << endl;
         cout << "[0] Kembali" << endl;
         cout << "Masukkan Pilihan Anda" << endl; 
         cout << "> "; cin >> pilihan; 
@@ -38,6 +40,7 @@ void runExchangeSort() {
                 jalankanQuiz(daftarPertanyaan); 
                 break;
             }
+            case 4: visualisasiExchange(); break;
         }
     
     } while (pilihan != 0);

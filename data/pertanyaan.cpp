@@ -39,7 +39,29 @@ vector<Pertanyaan> getPertanyaanPointer() {
 }
 
 // Struct
+vector<Pertanyaan> getPertanyaanStruct() {
+    vector<Pertanyaan> daftarPertanyaan; 
 
+    daftarPertanyaan.push_back({
+        "Apa fungsi utama dari Struct dalam C++?", 
+        {   "Menggabungkan beberapa variabel dengan tipe data berbeda menjadi satu kesatuan.", 
+            "Hanya untuk menyimpan kumpulan angka integer saja."},
+        1, 
+        "Struct dirancang khusus untuk mengelompokkan data heterogen (berbeda tipe) seperti String, Integer, dan Float dalam satu nama variabel", 
+        "Ingat analogi 'Formulir' yang memiliki kolom nama (teks) dan umur (angka)."
+    }); 
+
+    // daftarPertanyaan.push_back({
+    //     "Apa fungsi utama dari Struct dalam C++?", 
+    //     {   "Menggabungkan beberapa variabel dengan tipe data berbeda menjadi satu kesatuan.", 
+    //         "Hanya untuk menyimpan kumpulan angka integer saja."},
+    //     1, 
+    //     "Struct dirancang khusus untuk mengelompokkan data heterogen (berbeda tipe) seperti String, Integer, dan Float dalam satu nama variabel", 
+    //     "Ingat analogi 'Formulir' yang memiliki kolom nama (teks) dan umur (angka)."
+    // });
+
+    return daftarPertanyaan;
+}
 
 // Sorting
 vector<Pertanyaan> getPertanyaanBubbleSort() {
@@ -199,6 +221,7 @@ vector<Pertanyaan> getPertanyaanShellSort() {
 }
 
 // Searching
+// 1. Linear Search
 vector<Pertanyaan> getPertanyaanLinearSearch() {
     vector<Pertanyaan> daftarPertanyaan; 
 
@@ -210,6 +233,57 @@ vector<Pertanyaan> getPertanyaanLinearSearch() {
         2, 
         "Linear Search tidak memerlukan data yang terurut untuk melakukan proses Search.", 
         "Anda mengecek satu-satu tiap elemen dari array yang ada."
+    }); 
+
+    return daftarPertanyaan;    
+}
+
+// 2. Binary Search
+vector<Pertanyaan> getPertanyaanBinarySearch() {
+    vector<Pertanyaan> daftarPertanyaan; 
+
+    daftarPertanyaan.push_back({
+        "Apa syarat mutlak agar Binary Search dapat berfungsi dengan benar?", 
+        {   "Array harus memiliki jumlah elemen genap", 
+            "Array harus dalam keadaan terurut (sorted)"
+        },
+        2, 
+        "Syarat Wajib untuk Binary Search adalah data harus sudah terurut.", 
+        "Mirip seperti mencari kata di kamus, kata-katanya sudah dikelompokkan berdasarkan hurufnya."
+    }); 
+
+    return daftarPertanyaan;    
+}
+
+// 3. Interpolation Search
+vector<Pertanyaan> getPertanyaanInterpolationSearch() {
+    vector<Pertanyaan> daftarPertanyaan; 
+
+    daftarPertanyaan.push_back({
+        "Kapan Interpolation Search bekerja paling optimal dibandingkan Binary Search?", 
+        {   "Ketika data terurut dan distribusinya merata (uniform)", 
+            "Ketika data terurut tetapi distribusinya sangat acak/tidak merata"
+        },
+        1, 
+        "Interpolation Search adalah variasi dari Binary Search yang bekerja lebih baik pada data yang terurut dan terdistribusi secara uniform (merata).", 
+        "Algoritma ini 'menebak' posisi berdasarkan nilai, seperti mencari nama 'Budi' di buku telepon (dekat awal), bukan di tengah."
+    }); 
+
+    return daftarPertanyaan;    
+}
+
+// 4. Fibonacci Search
+vector<Pertanyaan> getPertanyaanFibonacciSearch() {
+    vector<Pertanyaan> daftarPertanyaan; 
+
+    daftarPertanyaan.push_back({
+        "Deret bilangan apa yang digunakan untuk menentukan titik pembagian pada Fibonacci Search?", 
+        {   "Deret Bilangan Prima", 
+            "Deret Bilangan Fibonacci"
+        },
+        2, 
+        "Fibonacci Search merupakan algoritma pencarian pada array terurut yang menggunakan Bilangan Fibonacci untuk membagi Array.", 
+        "Nama algoritmanya sudah sangat jelas menyebutkan deret bilangan yang digunakan."
     }); 
 
     return daftarPertanyaan;    

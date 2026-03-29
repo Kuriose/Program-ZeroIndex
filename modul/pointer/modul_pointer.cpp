@@ -8,15 +8,31 @@
 using namespace std; 
 
 void tampilkanTeoriPointer() {
-    cout << "\n[Teori]" << endl; 
-    cout << "Pointer merupakan variabel yang menyimpan alamat memori." << endl; 
+    cout << "\n[Teori -- Pointer]" << endl; 
+    cout << "Definisi:" << endl;
+    cout << "Pointer adalah variabel khusus yang menyimpan alamat memori dari variabel lain." << endl;
+    cout << "bukan menyimpan nilainya secara langsung." << endl;
+    
+    cout << "\nKonsep Inti:" << endl;
+    cout << "- Operator & (Address-of): Mengambil alamat memori variabel." << endl;
+    cout << "- Operator * (Dereference): Mengakses nilai di alamat tersebut." << endl;
+    cout << "- Tipe Data Pointer: Harus sesuai dengan tipe data variabel yang ditunjuk." << endl;
+    
+    cout << "\nCatatan Penting:" << endl;
+    cout << "- Pointer yang tidak diinisialisasi (wild pointer) berbahaya." << endl;
+    cout << "- Pastikan tipe data pointer sama dengan variabel target (int* untuk int)." << endl; 
 }
 
 void tampilkanContohPointer() {
-    cout << "\n[Contoh]" << endl;
-    cout << "int x = 10;" << endl;
-    cout << "int* p = &x;" << endl;
-    cout << "*p = 10;" << endl; 
+    cout << "\n[Contoh -- Source Code]" << endl;
+    cout << "int x = 10;        // Baris 1: Variabel biasa" << endl;
+    cout << "int* p = &x;       // Baris 2: Pointer menyimpan alamat x" << endl;
+    cout << "cout << *p;        // Baris 3: Akses nilai melalui pointer" << endl;
+    
+    cout << "\nPenjelasan:" << endl;
+    cout << "-> Baris 1: 'x' menyimpan nilai 10 di memori." << endl;
+    cout << "-> Baris 2: 'p' menyimpan alamat dari 'x' (misal: 0x100)." << endl;
+    cout << "-> Baris 3: '*p' mengambil nilai yang ada di alamat 0x100." << endl; 
 }
 
 void runModulPointer() {

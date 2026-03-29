@@ -10,6 +10,9 @@ void visualisasiPointer();
 // STRUCT
 void visualisasiStruct();
 
+// FUNGSI & PROSEDUR
+void visualisasiFP();
+
 // SORTING
 // 1. Bubble Sort
 void visualisasiBubble();

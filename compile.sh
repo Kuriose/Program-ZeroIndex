@@ -6,6 +6,7 @@ modul/searching/*.cpp \
 modul/pointer/*.cpp \
 modul/array/*.cpp \
 modul/struct/*.cpp \
+modul/fungsi-prosedur/*.cpp \
 inti/*.cpp \
 fitur/quiz/*.cpp \
 fitur/visualisasi/*.cpp \

@@ -5,19 +5,27 @@ vector<Pertanyaan> getPertanyaanArray() {
     vector<Pertanyaan> daftarPertanyaan; 
 
     daftarPertanyaan.push_back({
-        "Apa Output dari:\nint arr[3] = {1, 2, 3};\ncout << arr[1];", 
-        {"1", "2"}, 
-        2, 
-        "Index dimulai dari 0, jadi arr[1] = 2.", 
-        "Ingat, index array dimulai dari angka berapa?"
+        "Jika kamu mendeklarasikan int data[5], indeks berapa yang digunakan untuk mengakses elemen pertama?",
+        {"data[0]", "data[1]"},
+        1, 
+        "Dalam C++, indeks array selalu dimulai dari 0. Jadi elemen pertama adalah indeks 0, bukan 1.", 
+        "Ingatlah bahwa penghitungan indeks dalam C++ tidak dimulai dari 1."
     });
 
     daftarPertanyaan.push_back({
-        "Berapa Dimensi Array yang dimiliki oleh Matriks?",
-        {"Multi dimensi", "Dua Dimensi"},
+        "Apakah sebuah array standar di C++ dapat menyimpan tipe data int dan string secara bersamaan dalam satu deklarasi?",
+        {"Ya, bisa dicampur", "Tidak, harus sama"},
         2, 
-        "Matriks memiliki Baris dan Kolom, jadi Dimensi Dari Matriks adalah 2", 
-        "Ingat, Matriks punya bagian apa saja?"
+        "Array bersifat homoge, artinya semua elemen harus memiliki tipe data yang sama agar ukuran memori per elemen konsisten.", 
+        "Pertimbangkan bagaimana komputer mengalokasikan ukuran memori untuk setiap kotak dalam array."
+    });
+
+    daftarPertanyaan.push_back({
+        "Apa yang terjadi jika kamu mengakses data[5] pada array yang hanya memiliki ukuran 5 elemen (indeks 0-4)?",
+        {"Aman, akan mengembalikan nilai 0", "Bahaya, terjadi Out of Bounds"},
+        2, 
+        "Ukuran 5 berarti indeks valid hanya 0 sampai 4. Mengakses indeks 5 berarti mengakses memori di luar alokasi array yang dapat menyebabkan erro.", 
+        "Hitunglah jumlah indeks yang valid berdasarkan ukuran array."
     });
 
     return daftarPertanyaan; 
@@ -28,11 +36,27 @@ vector<Pertanyaan> getPertanyaanPointer() {
     vector<Pertanyaan> daftarPertanyaan; 
 
     daftarPertanyaan.push_back({
-        "Apa output dari kode dibawah?\nint x = 5;\nint* p = &x;\ncout << *p;", 
-        {"Error", "5"},
+        "Operator mana yang digunakan untuk mendapatkan alamat memori dari sebuah variabel?", 
+        {"Operator * (Bintang)", "Operator & (Ampersand)"},
         2, 
-        "*p berarti mengambil nilai dari alamat yang ditunjuk", 
-        "Apa arti tanda * pada pointer?"
+        "Operator & digunakan untuk mengambil alamat memori (address-of), sedangkan * digunakan untuk mengakses nilai di alamat tersebut", 
+        "Ingatlah singkatan 'Address-of'"
+    });
+
+    daftarPertanyaan.push_back({
+        "Bagaimana cara mendeklarasikan variabel pointer yang menunjuk ke tipe data int?", 
+        {"int p;", "int *p;"},
+        2, 
+        "Simbol * saat deklarasi menandakan bahwa variabel p adalah pointer, bukan variabel integer biasa.", 
+        "Perhatikan simbol yang menandakan bahwa variabel tersebut adalah penunjuk."
+    });
+
+    daftarPertanyaan.push_back({
+        "Jika int x = 5; dan int *p = &x;, apa nilai yang dihasilkan jika kamu mencetak *p?", 
+        {"Nilai 5", "Alamat memori dari x"},
+        1, 
+        "*p melakukan derefrence, yang artinya mengambil nilai yang disimpan di alamat yang ditunjuk oleh p. Karena p menunjuk ke x, maka nilainya adalah 5", 
+        "Dereference berarti 'membuka' alamat untuk mengambil isinya."
     });
 
     return daftarPertanyaan;
@@ -44,21 +68,76 @@ vector<Pertanyaan> getPertanyaanStruct() {
 
     daftarPertanyaan.push_back({
         "Apa fungsi utama dari Struct dalam C++?", 
-        {   "Menggabungkan beberapa variabel dengan tipe data berbeda menjadi satu kesatuan.", 
-            "Hanya untuk menyimpan kumpulan angka integer saja."},
-        1, 
-        "Struct dirancang khusus untuk mengelompokkan data heterogen (berbeda tipe) seperti String, Integer, dan Float dalam satu nama variabel", 
-        "Ingat analogi 'Formulir' yang memiliki kolom nama (teks) dan umur (angka)."
-    }); 
+        {   
+            "Menggabungkan beberapa variabel dengan tipe data berbeda menjadi satu kesatuan.", 
+            "Hanya untuk menyimpan kumpulan angka integer saja."
+        }, 
+        1, // Kunci Jawaban: A
+        "Struct dirancang khusus untuk mengelompokkan data heterogen (berbeda tipe) seperti String, Integer, dan Float dalam satu nama variabel.", 
+        "Ingat analogi 'Formulir' yang memiliki kolom nama (teks) dan umur (angka)." 
+    });
 
-    // daftarPertanyaan.push_back({
-    //     "Apa fungsi utama dari Struct dalam C++?", 
-    //     {   "Menggabungkan beberapa variabel dengan tipe data berbeda menjadi satu kesatuan.", 
-    //         "Hanya untuk menyimpan kumpulan angka integer saja."},
-    //     1, 
-    //     "Struct dirancang khusus untuk mengelompokkan data heterogen (berbeda tipe) seperti String, Integer, dan Float dalam satu nama variabel", 
-    //     "Ingat analogi 'Formulir' yang memiliki kolom nama (teks) dan umur (angka)."
-    // });
+    daftarPertanyaan.push_back({
+        "Operator apa yang digunakan untuk mengakses member variabel di dalam struct?", 
+        {   
+            "Operator Panah (->)", 
+            "Operator Titik (.)"
+        }, 
+        2, // Kunci Jawaban: B
+        "Untuk objek struct biasa (bukan pointer), kita menggunakan Operator Titik (.) untuk mengakses anggotanya. Operator panah (->) khusus untuk pointer struct.", 
+        "Contoh penulisan: namaObjek.namaMember." 
+    });
+
+    daftarPertanyaan.push_back({
+        "Apa yang sering terlupakan programmer saat mengakhiri definisi struct?", 
+        {   
+            "Titik koma (;) setelah kurung kurawal penutup", 
+            "Keyword 'return' di dalam struct"
+        }, 
+        1, 
+        "Sintaks struct wajib diakhiri dengan tanda titik koma (;) setelah kurung kurawal penutup '}'. Jika lupa, kompiler akan memberikan error.", 
+        "Contoh: struct Data { int x; }; <--- Perhatikan tanda ; di akhir." 
+    });
+
+    return daftarPertanyaan;
+}
+
+// Fungsi & Prosedur
+vector<Pertanyaan> getPertanyaanFP() {
+    vector<Pertanyaan> daftarPertanyaan; 
+
+    daftarPertanyaan.push_back({
+        "Apa perbedaan utama antara Fungsi dan Prosedur (void) dalam C++?", 
+        {   
+            "Fungsi mengembalikan nilai dengan return, Prosedur (void) tidak.", 
+            "Prosedur wajib memiliki parameter, Fungsi tidak boleh memiliki parameter."
+        }, 
+        1, // Kunci Jawaban: A
+        "Fungsi memiliki return type selain void (seperti int, string) dan menggunakan keyword 'return'. Prosedur menggunakan 'void' dan tidak mengembalikan nilai.", 
+        "Perhatikan tipe data sebelum nama fungsi: 'int hitung()' vs 'void tampil()'." 
+    });
+
+    daftarPertanyaan.push_back({
+        "Jika parameter fungsi dilewatkan secara by value (misal: void ubah(int x)), apa yang terjadi pada variabel asli?", 
+        {   
+            "Variabel asli ikut berubah karena alamat memori yang sama digunakan.", 
+            "Variabel asli TIDAK berubah karena fungsi hanya menerima salinan nilai."
+        }, 
+        2, // Kunci Jawaban: B
+        "Parameter by value menerima copy/salinan dari variabel. Perubahan di dalam fungsi hanya berlaku lokal dan tidak mempengaruhi variabel asli di pemanggil.", 
+        "Analogi: Memberikan fotokopi dokumen. Coretan di fotokopi tidak merusak dokumen asli." 
+    });
+
+    daftarPertanyaan.push_back({
+        "Mengapa kita perlu menuliskan function prototype (deklarasi fungsi) sebelum main()?", 
+        {   
+            "Agar kompiler mengenali fungsi tersebut saat dipanggil di main(), meskipun definisinya ada di bawah.", 
+            "Agar fungsi dapat berjalan lebih cepat karena sudah dideklarasikan sebelumnya."
+        }, 
+        1, 
+        "C++ membaca kode dari atas ke bawah. Prototype memberi tahu kompiler tentang signature fungsi (nama, parameter, return type) sebelum fungsi tersebut benar-benar dipanggil.", 
+        "Tanpa prototype, pemanggilan fungsi yang didefinisikan setelah main() akan menyebabkan error 'function was not declared in this scope'." 
+    });
 
     return daftarPertanyaan;
 }
@@ -68,12 +147,37 @@ vector<Pertanyaan> getPertanyaanBubbleSort() {
     vector<Pertanyaan> daftarPertanyaan; 
 
     daftarPertanyaan.push_back({
-        "Bagaimana Prinsip Kerja Bubble Sort?", 
-        {"Menukar elemen jika tidak sesuai", "Menyisipkan elemen ke bagian depan"},
+        "Bagaimana cara kerja utama dari algoritma Bubble Sort?", 
+        {   
+            "Membandingkan dan menukar elemen bersebelahan jika urutannya salah.", 
+            "Membagi array menjadi dua bagian lalu mengurutkan masing-masing bagian."
+        }, 
         1, 
-        "Prinsip Kerja Bubble Sort dengan cara menukar elemen satu dengan yang lain", 
-        "Perhatikan nama dari Bubble Sort"
-    }); 
+        "Bubble Sort bekerja dengan iterasi berulang, membandingkan elemen adjacent (bersebelahan), dan melakukan swap jika posisi mereka salah.", 
+        "Ingat analogi gelembung udara yang naik ke permukaan, elemen terbesar 'menggelembung' ke akhir array." 
+    });
+
+    daftarPertanyaan.push_back({
+        "Apa kompleksitas waktu (Time Complexity) dari Bubble Sort pada kasus terburuk?", 
+        {   
+            "O(n) - Linear", 
+            "O(n^2) - Quadratic"
+        }, 
+        2, 
+        "Bubble Sort menggunakan nested loop (loop bersarang). Loop luar berjalan n kali, loop dalam juga hingga n kali, sehingga totalnya n x n = n^2.", 
+        "Ini membuat Bubble Sort tidak efisien untuk data dalam jumlah besar." 
+    });
+
+    daftarPertanyaan.push_back({
+        "Dalam kode Bubble Sort untuk ascending (menaik), kapan kita melakukan swap antara arr[j] dan arr[j+1]?", 
+        {   
+            "Ketika arr[j] < arr[j+1]", 
+            "Ketika arr[j] > arr[j+1]"
+        }, 
+        2, 
+        "Untuk urutan menaik (ascending), elemen kiri harus lebih kecil dari kanan. Jika arr[j] > arr[j+1], berarti posisi salah dan perlu ditukar.", 
+        "Bayangkan ingin urut kecil ke besar: jika yang kiri lebih besar, itu salah posisi." 
+    });
 
     return daftarPertanyaan;
 }
@@ -82,12 +186,38 @@ vector<Pertanyaan> getPertanyaanInsertionSort() {
     vector<Pertanyaan> daftarPertanyaan; 
 
     daftarPertanyaan.push_back({
-        "Bagaimana Prinsip Kerja Dari Insertion Sort?", 
-        {"Menukar elemen jika tidak sesuai", "Menyisipkan elemen ke bagian depan array"},
+        "Bagaimana cara kerja utama dari algoritma Insertion Sort?", 
+        {   
+            "Membandingkan elemen bersebelahan lalu menukarnya jika salah posisi.", 
+            "Mengambil elemen dan menyisipkannya ke posisi yang tepat di bagian yang sudah terurut."
+        }, 
         2, 
-        "Prinsip Kerja Insertion Sort dengan cara menyisipkan elemen yang benar ke bagian depan array", 
-        "Insertion Sort cara kerjanya mirip dengan menggeser kartu"
-    }); 
+        "Insertion Sort bekerja dengan membagi array menjadi bagian sorted dan unsorted, lalu menyisipkan elemen dari unsorted ke posisi yang benar di sorted.", 
+        "Ingat analogi mengurutkan kartu di tangan: Anda mengambil kartu baru dan menyelipkannya ke posisi yang tepat." 
+    });
+
+    daftarPertanyaan.push_back({
+        "Kapan Insertion Sort memiliki performa terbaik (Best Case)?", 
+        {   
+            "Ketika data sudah terurut sebelumnya.", 
+            "Ketika data sepenuhnya acak."
+        }, 
+        1, 
+        "Jika data sudah terurut, kondisi loop while (arr[j] > key) tidak pernah terpenuhi, sehingga tidak ada geseran. Kompleksitasnya menjadi O(n).", 
+        "Cek kondisi pada loop while. Jika tidak pernah true, tidak ada geser yang terjadi." 
+    });
+
+
+    daftarPertanyaan.push_back({
+        "Apa yang terjadi pada elemen yang lebih besar dari 'key' selama proses penyisipan?", 
+        {   
+            "Dihapus dari array.", 
+            "Digeser satu posisi ke kanan."
+        }, 
+        2, 
+        "Elemen yang lebih besar dari key harus digeser ke kanan (arr[j+1] = arr[j]) untuk membuat ruang kosong bagi key di posisi yang benar.", 
+        "Perhatikan baris kode: arr[j + 1] = arr[j]. Ini adalah operasi geser, bukan hapus." 
+    });
 
     return daftarPertanyaan;
 }
@@ -96,13 +226,36 @@ vector<Pertanyaan> getPertanyaanSelectionSort() {
     vector<Pertanyaan> daftarPertanyaan; 
 
     daftarPertanyaan.push_back({
-        "Bagaimana cara kerja utama dari Selection Sort dalam menempatkan elemen?", 
-        {   "Menukar elemen minimum yang ditemukan ke posisi awal bagian yang belum terurut", 
-            "Menggabungkan dua array terpisah menjadi satu array baru"
-        },
+        "Bagaimana cara kerja utama dari algoritma Selection Sort?", 
+        {   
+            "Mencari elemen minimum dari bagian belum terurut lalu menukarnya ke posisi awal.", 
+            "Membandingkan elemen bersebelahan lalu menukarnya jika urutannya salah."
+        }, 
         1, 
-        "Insertion Sort bekerja dengan berulang kali menemukan elemen minimum/maksimum dari bagian yang belum terurut dan memindahkannya ke posisi yang benar di awal array", 
-        "Ingat kata 'Selection' (Pemilihan)."
+        "Selection Sort bekerja dengan mencari elemen terkecil dari unsorted portion, lalu menukarnya dengan elemen di posisi saat ini. Berbeda dengan Bubble Sort yang swap adjacent.", 
+        "Ingat kata 'Selection' = memilih yang terkecil, lalu menempatkannya di posisi yang benar." 
+    });
+
+    daftarPertanyaan.push_back({
+        "Apa kompleksitas waktu Selection Sort pada kasus terbaik (Best Case)?", 
+        {   
+            "O(n) - Linear", 
+            "O(n^2) - Quadratic"
+        }, 
+        2, 
+        "Tidak seperti Insertion Sort, Selection Sort tetap harus mencari minimum di setiap pass meskipun data sudah terurut. Jadi Best Case tetap O(n²).", 
+        "Loop tetap berjalan penuh untuk mencari minimum, tidak ada kondisi yang bisa dilewati." 
+    });
+
+    daftarPertanyaan.push_back({
+        "Dibanding Bubble Sort, apa keunggulan Selection Sort dalam hal operasi swap?", 
+        {   
+            "Selection Sort melakukan swap lebih sedikit (maksimal n-1 kali).", 
+            "Selection Sort melakukan swap lebih banyak karena lebih kompleks."
+        }, 
+        1, 
+        "Selection Sort hanya melakukan 1 swap per pass (maksimal n-1 total). Bubble Sort bisa melakukan banyak swap per pass jika banyak elemen yang salah posisi.", 
+        "Ini membuat Selection Sort lebih efisien dalam hal write operation meskipun kompleksitasnya sama." 
     }); 
 
     return daftarPertanyaan;
@@ -112,13 +265,36 @@ vector<Pertanyaan> getPertanyaanHeapSort() {
     vector<Pertanyaan> daftarPertanyaan; 
 
     daftarPertanyaan.push_back({
-        "Struktur data apa yang menjadi dasar utama dari algoritma Heap Sort?", 
-        {   "Binary Search Tree", 
-            "Binary Heap"
-        },
-        2, 
-        "Heap Sort menggunakan menggunakan Heap dari array, lalu berulang kali mengambil elemen terbesar dari akar heap dan menaruhnya di akhir array", 
-        "Nama algoritmanya sudah memberikan petunjuk tentang struktur datanya."
+        "Struktur data apa yang digunakan oleh algoritma Heap Sort?", 
+        {   
+            "Binary Heap (Max Heap atau Min Heap)", 
+            "Linked List dengan pointer ganda"
+        }, 
+        1, 
+        "Heap Sort menggunakan Binary Heap, biasanya Max Heap untuk ascending sort. Root heap selalu berisi elemen terbesar yang akan dipindah ke akhir array.", 
+        "Ingat nama 'Heap' Sort. Struktur heap adalah tree lengkap yang memenuhi sifat parent >= children (Max Heap)." 
+    });
+
+    daftarPertanyaan.push_back({
+        "Apa keunggulan utama Heap Sort dibanding Bubble, Insertion, dan Selection Sort?", 
+        {   
+            "Heap Sort memiliki kompleksitas O(n log n) untuk semua kasus.", 
+            "Heap Sort lebih mudah diimplementasikan daripada sorting lainnya."
+        }, 
+        1, 
+        "Heap Sort memiliki kompleksitas O(n log n) untuk best, average, dan worst case. Ini lebih efisien dari O(n²) untuk data besar.", 
+        "Bubble, Insertion, Selection Sort semuanya O(n²) di worst case. Heap Sort konsisten di O(n log n)." 
+    });
+
+    daftarPertanyaan.push_back({
+        "Jika sebuah node berada di index i dalam array representation dari Binary Heap, di mana index left child-nya?", 
+        {   
+            "2*i + 1", 
+            "2*i - 1"
+        }, 
+        1, 
+        "Dalam array representation, left child dari node i adalah 2*i + 1, dan right child adalah 2*i + 2. Ini formula standar binary heap.", 
+        "Coba gambar tree dengan root di index 0. Left child-nya akan di index 1, yang sesuai dengan rumus 2*0 + 1 = 1." 
     }); 
 
     return daftarPertanyaan;

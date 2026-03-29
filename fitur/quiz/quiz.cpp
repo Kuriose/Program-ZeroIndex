@@ -32,7 +32,7 @@ void jalankanQuiz(vector<Pertanyaan> daftarPertanyaan) {
                 cout << "Salah." << endl; 
                 
                 if (kesempatan == 1) {
-                    cout << "Petunjuk: " << daftarPertanyaan[i].petunjuk << endl; 
+                    cout << "\nPetunjuk: " << daftarPertanyaan[i].petunjuk << endl; 
                     cout << "Coba lagi..." << endl;
                 }
             }

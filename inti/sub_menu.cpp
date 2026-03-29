@@ -3,6 +3,7 @@
 #include "../modul/array/modul_array.h"
 #include "../modul/pointer/modul_pointer.h"
 #include "../modul/struct/modul_struct.h"
+#include "../modul/fungsi-prosedur/modul_fungsi_prosedur.h"
 #include "../modul/sorting/modul_sorting.h"
 #include "../modul/searching/modul_searching.h"
 
@@ -16,8 +17,9 @@ void showSubMenu() {
         cout << "[1] Array" << endl; 
         cout << "[2] Pointer" << endl;
         cout << "[3] Struct" << endl;
-        cout << "[4] Sorting" << endl;
-        cout << "[5] Searching" << endl;
+        cout << "[4] Fungsi dan Prosedur" << endl;
+        cout << "[5] Sorting" << endl;
+        cout << "[6] Searching" << endl;
         cout << "[0] Keluar" << endl; 
         cout << "Pilihan Anda:" << endl; 
         cout << "> "; cin >> pilihan; 
@@ -33,9 +35,12 @@ void showSubMenu() {
                 runModulStruct(); 
                 break;
             case 4: 
-                runModulSorting();
+                runModulFP();
                 break;
             case 5:
+                runModulSorting();
+                break;
+            case 6:
                 runModulSearching();
                 break;
         }

@@ -15,6 +15,9 @@ vector<Pertanyaan> getPertanyaanPointer();
 // MODUL STRUCT
 vector<Pertanyaan> getPertanyaanStruct();
 
+// MODUL FUNGSI & PROSEDUR
+vector<Pertanyaan> getPertanyaanFP();
+
 // MODUL SORTING
 vector<Pertanyaan> getPertanyaanBubbleSort();
 vector<Pertanyaan> getPertanyaanInsertionSort();

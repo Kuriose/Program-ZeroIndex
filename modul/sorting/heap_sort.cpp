@@ -20,7 +20,7 @@ void teoriHeapSort() {
     cout << "\nCatatan Penting:" << endl;
     cout << "- Heap Sort adalah in-place sort (tidak butuh memori tambahan besar)." << endl;
     cout << "- Termasuk Unstable Sort (urutan data sama bisa berubah)." << endl;
-    cout << "- Lebih efisien dari O(n²) sort untuk data besar." << endl;
+    cout << "- Lebih efisien dari O(n^2) sort untuk data besar." << endl;
 }
 
 void contohHeapSort() {
